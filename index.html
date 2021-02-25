@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taptempo | Clean and simple BPM tool </title>
+    <meta name="description" content="Interactive tap-tempo tool to help you find the right tempo. Tap the big red button or hit any key to get started." />
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#000000">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#000000">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#000000">
+    <link rel="stylesheet" href="styleX.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nova+Cut&family=Nova+Flat&display=swap" rel="stylesheet">
+    <script src="js/tempo.js"></script>
+    <!--  -->
+</head>
+
+<body onkeypress="tapped(), keyCounter()">
+    <button class="td_button mainButton" onmousedown="tapped()">
+      <div class="onBoarding" id="onBoarding">
+        <!-- <h2 class="bmp" id="tempoBMP"></h2>  -->
+        <h2 class='onBoardingMessage slideup' id='onBoardingStart'>Start pressing any key to get beats per minute</h2>
+      </div>
+    </button>
+
+    <!-- <h2 class='onBoardingMessage slideup'>Start pressing any key to get beats per minute</h2> -->
+
+    <main id="main">
+
+    </main>
+
+    <audio id="audio" src="sound/eastboundHat.wav"></audio>
+    <footer>
+        <div class="settings">
+            <span class="appBtn" id="audioIcon" onclick="audioControl()">
+              <img src="/icons/speaker.svg" alt="audio option" class="audioIcon" id="audioIcon" />
+          </span>
+            <span class="appBtn" id="resetbutton" onclick="resetX()">
+          <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.13405 13.3333C8.65135 7.9182 14.1389 4.16666 20.5 4.16666C27.9107 4.16666 34.1352 9.25909 35.8591 16.1372C36.0269 16.8069 36.7058 17.2137 37.3755 17.0458C38.0451 16.878 38.4519 16.1991 38.2841 15.5294C36.2881 7.56564 29.0845 1.66666 20.5 1.66666C13.7459 1.66666 7.84709 5.31861 4.66663 10.7526V7.91666C4.66663 7.2263 4.10698 6.66666 3.41663 6.66666C2.72627 6.66666 2.16663 7.2263 2.16663 7.91666V14.1667C2.16663 15.0871 2.91282 15.8333 3.83329 15.8333H10.0833C10.7736 15.8333 11.3333 15.2737 11.3333 14.5833C11.3333 13.893 10.7736 13.3333 10.0833 13.3333H6.13405Z" fill="white"/>
+            <path d="M5.14089 23.8628C4.97306 23.1931 4.29414 22.7863 3.6245 22.9542C2.95486 23.122 2.54806 23.8009 2.7159 24.4705C4.71191 32.4343 11.9155 38.3333 20.5 38.3333C27.254 38.3333 33.1528 34.6814 36.3333 29.2474V32.0833C36.3333 32.7737 36.8929 33.3333 37.5833 33.3333C38.2736 33.3333 38.8333 32.7737 38.8333 32.0833V25.8333C38.8333 24.9128 38.0871 24.1667 37.1666 24.1667H30.9166C30.2263 24.1667 29.6666 24.7263 29.6666 25.4167C29.6666 26.107 30.2263 26.6667 30.9166 26.6667H34.8659C32.3486 32.0818 26.861 35.8333 20.5 35.8333C13.0893 35.8333 6.8648 30.7409 5.14089 23.8628Z" fill="white"/>
+            </svg>
+          </span>
+        </div>
+
+        <a class="appBtn websiteBtn" href="https://tesfadan.com" target="_blank">
+            <svg width="49" height="48" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M24.5 2C12.3497 2 2.5 11.8497 2.5 24C2.5 36.1503 12.3497 46 24.5 46C36.6503 46 46.5 36.1503 46.5 24C46.5 11.8497 36.6503 2 24.5 2ZM5.52586 23H15.0165C15.2171 16.9263 17.2148 12.0193 19.2025 8.59227C19.9824 7.2475 20.7634 6.12597 21.4391 5.24526C12.7218 6.65709 5.99253 14.0002 5.52586 23ZM15.0661 26H5.60401C6.49733 34.5394 13.047 41.3956 21.4391 42.7547C20.7634 41.874 19.9824 40.7525 19.2025 39.4078C17.325 36.1708 15.4387 31.6136 15.0661 26ZM18.0736 26H30.9264C30.5604 30.9585 28.8858 35.0003 27.2025 37.9026C26.2508 39.5433 25.301 40.8115 24.595 41.6637L24.5 41.7776L24.405 41.6637C23.699 40.8115 22.7492 39.5433 21.7975 37.9026C20.1142 35.0003 18.4396 30.9585 18.0736 26ZM30.9817 23H18.0183C18.2172 17.5834 20.0024 13.1925 21.7975 10.0974C22.7492 8.4567 23.699 7.1885 24.405 6.33636L24.5 6.22248L24.595 6.33636C25.301 7.1885 26.2508 8.4567 27.2025 10.0974C28.9976 13.1925 30.7828 17.5834 30.9817 23ZM33.9339 26C33.5613 31.6136 31.675 36.1708 29.7975 39.4078C29.0176 40.7525 28.2366 41.874 27.5609 42.7547C35.953 41.3956 42.5027 34.5394 43.396 26H33.9339ZM43.4741 23H33.9835C33.7829 16.9263 31.7852 12.0193 29.7975 8.59227C29.0176 7.2475 28.2366 6.12597 27.5609 5.24526C36.2782 6.65709 43.0075 14.0002 43.4741 23Z" fill="white"/>
+            </svg>
+        </a>
+    </footer>
+</body>
+
+</html>

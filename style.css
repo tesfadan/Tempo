@@ -1,0 +1,254 @@
+body {
+    /* background-image: linear-gradient(#ff8083, #9fceff); */
+    padding: 0px;
+    margin: 0px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    grid-template-rows: repeat(16, 40px);
+    font-family: 'Roboto Slab', serif;
+    justify-items: center;
+}
+
+header {
+    height: 50px;
+    width: 100%;
+    grid-column: 1/end;
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid #E0E0E0;
+    justify-items: center;
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.headerInfoCont {
+    display: inline-block;
+    grid-column: 14;
+    grid-row: 2/3;
+}
+
+.instagramLink {
+    grid-column: 14;
+    grid-row: 2/3;
+    text-align: center;
+    margin: 1em 0;
+}
+
+.instagram {
+    height: 20px;
+    width: 20px;
+    opacity: 0.4;
+}
+
+.mainTitle {
+    font-weight: 700;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    text-align: left;
+    color: #5C5C5C;
+    margin: 1em 0;
+    grid-column: 2;
+    grid-row: 2/3;
+}
+
+.tempo_button {
+    transition: 0.05s;
+    text-align: left;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    background-color: #FF8083;
+    color: #FFFFFF;
+    cursor: pointer;
+    user-select: contain;
+    grid-column: 2/15;
+    grid-row: 5;
+    height: 260px;
+    width: 260px;
+    margin: 0 auto;
+    outline: none;
+    border: none;
+}
+
+input,
+textarea,
+button,
+select,
+img,
+a {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+.tempo_button:focus {
+    outline: none;
+    border: none;
+}
+
+.tempo_button:hover {
+    transition: 0.05s;
+}
+
+.tempo_button:active {
+    transition: 0.05s;
+    background-color: #629B95;
+}
+
+.tempoCount {
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
+}
+
+.count {
+    font-size: 6em;
+    letter-spacing: 0.03em;
+}
+
+.bmp {
+    font-size: 2em;
+    letter-spacing: 0.05em;
+}
+
+.keyboardOption {
+    color: #808080;
+    font-weight: 400;
+    font-family: 'Roboto Slab', sans-serif;
+    text-align: center;
+    display: none;
+}
+
+.audioIcon {
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    grid-column: 8;
+    grid-row: 14;
+}
+
+.resetIcon {
+    grid-column: 6;
+    grid-row: 9;
+    text-align: right;
+    opacity: 0.6;
+    display: none;
+}
+
+.hide {
+    display: none;
+}
+
+.fadeOut {
+    transition: 0.1s ease-out;
+    opacity: 0;
+}
+
+.fadeIn {
+    transition: 0.1s ease-in;
+    opacity: 1;
+}
+
+@media (max-width:350px) {
+    body {
+        grid-template-rows: repeat(12, 40px);
+    }
+    header {
+        height: 40px;
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.005);
+    }
+    .mainTitle {
+        margin: 0.7em 0;
+    }
+    .instagramLink {
+        margin: 0.7em 0;
+    }
+    .tempo_button {
+        height: 200px;
+        width: 200px;
+        grid-row: 3;
+        margin-top: 20px;
+        touch-action: manipulation;
+    }
+    .audioIcon {
+        grid-row: 10;
+    }
+}
+
+@media (min-width:568px) and (max-width: 812px) and (orientation: landscape) {
+    body {
+        grid-template-rows: repeat(7, 40px);
+    }
+    .tempo_button {
+        grid-row: 3;
+        grid-column: 12;
+        height: 200px;
+        width: 200px;
+    }
+    .audioIcon {
+        margin: 0.5em 0;
+        grid-column: 4;
+        grid-row: 5;
+    }
+    .tempoCount {
+        font-size: 1em;
+    }
+    .count {
+        font-size: 4em;
+    }
+}
+
+@media (min-width:480px) and (max-width:568px) and (orientation: landscape) {
+    body {
+        /* background-color: red; */
+        grid-template-rows: repeat(5, 40px);
+    }
+    header {
+        height: 40px;
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.005);
+    }
+    .mainTitle {
+        margin: 0.7em 0;
+    }
+    .instagramLink {
+        margin: 0.7em 0;
+    }
+    .tempo_button {
+        grid-row: 2;
+        grid-column: 12;
+        height: 200px;
+        width: 200px;
+        margin-top: 20px;
+    }
+    .audioIcon {
+        margin: 1.6em 0;
+        grid-column: 4;
+        grid-row: 4;
+    }
+}
+
+
+/* LAPTOP & IPAD */
+
+
+/* @media (min-width: 768px) {
+  body{
+  }
+  header{
+    height: 80px;
+  }
+  .mainTitle{
+    font-size: 1.25em;
+    grid-column: 8;
+  }
+  .instagramLink{
+    margin-top: 1.5em;
+    grid-column: 15;
+    margin-right: 20px;
+  }
+  .instagram{
+    height: 25px;
+    width: 25px;
+  }
+} */

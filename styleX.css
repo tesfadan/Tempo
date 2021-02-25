@@ -1,0 +1,97 @@
+:root {
+    --orange: #F28537;
+    --black: #24292E;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background: var(--orange);
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: column;
+}
+
+* {
+    font-family: 'Nova Flat', cursive;
+    color: var(--black);
+}
+
+.count {
+    font-family: 'Nova Cut', cursive;
+    font-size: 160px;
+}
+
+.settings {
+    display: flex;
+    flex-flow: row;
+    gap: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: max-content;
+    position: fixed;
+    bottom: 56px;
+    left: 50px;
+}
+
+.appBtn {
+    height: 80px;
+    width: 120px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.125s ease-in-out;
+}
+
+.appBtn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.websiteBtn {
+    position: fixed;
+    bottom: 56px;
+    right: 50px;
+}
+
+.mainButton {
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+    position: fixed;
+    background: var(--orange);
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+@keyframes reveal {
+    0% {
+        opacity: 0;
+        bottom: -20px;
+    }
+    100% {
+        opacity: 1;
+        bottom: 0px;
+    }
+}
+
+.slideup {
+    position: relative;
+    animation: reveal 1s;
+}
+
+button {
+    z-index: 800;
+}
+
+.slideupbig {
+    position: relative;
+    animation: reveal 0.25s ease-in-out;
+}
