@@ -45,12 +45,12 @@ function audioControl() {
 var keyCount = 0;
 function keyCounter() {
   if (keyCount > 0) {
-    // document.getElementById("keyboardOption").className += ' fadeOut';
-    // console.log("FADE OUT NOW")
     document.getElementById("onBoarding").innerHTML = "";
-
   }
-  keyCount += 1;
+  else {
+    document.getElementById("onBoarding").innerHTML = "<h2 class='onBoardingMessage slideup' id='onBoardingKeep'>Keep Going</h2>";
+  }
+  ++keyCount;
 }
 
 function tapped() {
@@ -63,7 +63,7 @@ function tapped() {
     audio.play();
   }
 
-  if (firstTap == true) {
+  if (firstTap === true) {
     document.getElementById("onBoarding").innerHTML = "<h2 class='onBoardingMessage slideup' id='onBoardingKeep'>Keep Going</h2>";
   }
   if (x == 0) {
@@ -115,29 +115,13 @@ function tapped() {
   else {
     console.log("WHHUT")
   }
-
 }
-
-// function reset() {
-//   firstTap = true;
-//   log("Reset Requested!");
-//   document.getElementById("tempoCount").innerHTML = "";
-//   document.getElementById("tempoBMP").innerHTML = "Click Here";
-
-//   count = 0;
-//   x = 0;
-//   // document.getElementById("resetIcon").setAttribute("style", "display: none;");
-//   // document.getElementById("resetIcon").className = 'audioIcon resetIcon fadeOut';
-//   // document.getElementById("onBoarding").innerHTML = "<h2 class='onBoardingMessage slideup'>Start pressing any key to get beats per minute</h2>";
-// }
-
-
-
 function resetX() {
   firstTap = true;
   document.getElementById("onBoarding").innerHTML = "<h2 class='onBoardingMessage slideup' id='onBoardingStart'>Start pressing any key to get beats per minute</h2>";
   document.getElementById("main").innerHTML = "";
   console.log("RESET X");
   count = 0;
+  keyCount = 0;
   x = 0;
 }
