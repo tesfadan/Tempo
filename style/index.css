@@ -10,6 +10,11 @@ body {
     display: flex;
     flex-wrap: wrap;
     flex-flow: column;
+    position: relative;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 * {
@@ -56,21 +61,6 @@ body {
     right: 50px;
 }
 
-.mainButton {
-    height: 100vh;
-    width: 100vw;
-    z-index: -1;
-    position: fixed;
-    background: var(--orange);
-}
-
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
 @keyframes reveal {
     0% {
         opacity: 0;
@@ -87,11 +77,17 @@ body {
     animation: reveal 1s;
 }
 
-button {
-    z-index: 800;
-}
-
 .slideupbig {
     position: relative;
     animation: reveal 0.25s ease-in-out;
+}
+
+#count {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0px;
 }

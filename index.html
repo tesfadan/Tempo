@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taptempo | Clean and simple BPM tool </title>
-    <meta name="description" content="Interactive tap-tempo tool to help you find the right tempo. Tap the big red button or hit any key to get started." />
+    <meta name="description" content="Interactive beats-per-minute finder." />
     <!-- Chrome, Firefox OS and Opera -->
     <meta name="theme-color" content="#F28537">
     <!-- Windows Phone -->
@@ -16,24 +16,23 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nova+Cut&family=Nova+Flat&display=swap" rel="stylesheet">
     <script src="js/tempo.js"></script>
+    <link rel="icon" type="image/png" href="icons/tempo.png" />
     <!--  -->
 </head>
 
-<body onkeypress="tapped(), keyCounter()">
-    <button class="td_button mainButton" onmousedown="tapped()">
-      <div class="onBoarding" id="onBoarding">
+<body onkeypress="tap()" id="body">
+    <div class="onBoarding" id="onBoarding">
         <h2 class='onBoardingMessage slideup' id='onBoardingStart'>Start pressing any key to get beats per minute</h2>
-      </div>
-    </button>
+    </div>
 
-    <main id="main">
+    <div id="count" onclick=tap()>
 
-    </main>
-
+    </div>
     <audio id="audio" src="sound/eastboundHat.wav"></audio>
+
     <footer>
         <div class="settings">
-            <span class="appBtn" onclick="audioControl()">
+            <span class="appBtn" onclick=audioSwitch()>
               <img src="/icons/speaker.svg" alt="Tap Tempo audio option"  id="audioIcon" />
           </span>
             <span class="appBtn" id="resetbutton" onclick="reset()">
@@ -44,7 +43,7 @@
           </span>
         </div>
 
-        <a class="appBtn websiteBtn" href="https://tesfadan.com" target="_blank">
+        <a class="appBtn websiteBtn" href="https://tesfadan.com">
             <svg width="49" height="48" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M24.5 2C12.3497 2 2.5 11.8497 2.5 24C2.5 36.1503 12.3497 46 24.5 46C36.6503 46 46.5 36.1503 46.5 24C46.5 11.8497 36.6503 2 24.5 2ZM5.52586 23H15.0165C15.2171 16.9263 17.2148 12.0193 19.2025 8.59227C19.9824 7.2475 20.7634 6.12597 21.4391 5.24526C12.7218 6.65709 5.99253 14.0002 5.52586 23ZM15.0661 26H5.60401C6.49733 34.5394 13.047 41.3956 21.4391 42.7547C20.7634 41.874 19.9824 40.7525 19.2025 39.4078C17.325 36.1708 15.4387 31.6136 15.0661 26ZM18.0736 26H30.9264C30.5604 30.9585 28.8858 35.0003 27.2025 37.9026C26.2508 39.5433 25.301 40.8115 24.595 41.6637L24.5 41.7776L24.405 41.6637C23.699 40.8115 22.7492 39.5433 21.7975 37.9026C20.1142 35.0003 18.4396 30.9585 18.0736 26ZM30.9817 23H18.0183C18.2172 17.5834 20.0024 13.1925 21.7975 10.0974C22.7492 8.4567 23.699 7.1885 24.405 6.33636L24.5 6.22248L24.595 6.33636C25.301 7.1885 26.2508 8.4567 27.2025 10.0974C28.9976 13.1925 30.7828 17.5834 30.9817 23ZM33.9339 26C33.5613 31.6136 31.675 36.1708 29.7975 39.4078C29.0176 40.7525 28.2366 41.874 27.5609 42.7547C35.953 41.3956 42.5027 34.5394 43.396 26H33.9339ZM43.4741 23H33.9835C33.7829 16.9263 31.7852 12.0193 29.7975 8.59227C29.0176 7.2475 28.2366 6.12597 27.5609 5.24526C36.2782 6.65709 43.0075 14.0002 43.4741 23Z" fill="white"/>
             </svg>
